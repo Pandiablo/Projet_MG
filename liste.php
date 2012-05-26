@@ -21,14 +21,14 @@ body {
 <div style="margin-left:100px; margin-right: 100px; border: 1px solid white; padding: 7px; background-color:#94a7e0; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-top-left-radius:10px;">
 <style>
 #outdiv { 
-height: 3230px;
+height: 3580px;
 overflow: hidden; 
 position: relative; 
 width: 650px; 
 } 
 
 #iniframe { 
-height: 3730px; 
+height: 4060px; 
 left: -292px; 
 position: absolute; 
 top: -535px; 
@@ -52,7 +52,7 @@ width: 1280px;
 
 #cache {
 	width : 40%;
-	height: 345%;
+	height: 380%;
 	position: absolute;
 	left:30%;	
 	top: 60%;

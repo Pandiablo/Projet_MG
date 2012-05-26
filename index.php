@@ -48,6 +48,8 @@ $accents[3] = "é";
 $accents[4] = "ê";
 $accents[5] = "ù";
 $accents[6] = "ô";
+$accents[7] = "/*";
+$accents[8] = "*/";
 
 $raccents[1] = "&agrave;";
 $raccents[2] = "&egrave;";
@@ -55,6 +57,8 @@ $raccents[3] = "&eacute;";
 $raccents[4] = "&ecirc;";
 $raccents[5] = "&ugrave;";
 $raccents[6] = "&ocirc;";
+$raccents[7] = "<!--";
+$raccents[8] = "-->";
 
 					
 ?>
