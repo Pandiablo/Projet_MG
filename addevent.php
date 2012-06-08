@@ -8,7 +8,7 @@ require ('header.php');
 
 require('connect.php');
 $pseudo = $_SESSION['pseudo'];
-$sql = "SELECT id FROM mg_user WHERE pseudo='$pseudo'";
+$sql = "SELECT id FROM mg_user WHERE pseudo='".$pseudo."'";
 $req = mysql_query($sql);
 $data = mysql_fetch_assoc($req);
 $id = $data['id'];
@@ -41,8 +41,8 @@ body {
 if(!empty($_POST))
 {
 	extract($_POST);
-	$sql = "INSERT INTO event (idpro,titre,desc,i1,etat,insc) VALUES (".$id.",'".$titre."','".$desc."','".$pi1."',".$petat.",".$pinsc.")";
-	$req = mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br/>'.mysql_error());
+/*	$sql = "INSERT INTO event (idpro, titre, desc, date, i1, i2, i3, i4, i5, i6, i7, i8, etat, insc) VALUES (".$id.",'".$titre."','".$desc."', '".$date."', '".$pi1."','0','0','0','0','0','0','0',".$petat.",".$pinsc.")";*/
+	mysql_query("INSERT INTO event (idpro, titre, desc, date, i1, i2, i3, i4, i5, i6, i7, i8, etat, insc) VALUES ($idpro, '$titre', '$desc', '$date', '$i1', '0', '0', '0', '0', '0', '0', '0', 1, 1)") or die('Erreur SQL !<br /><br/>'.mysql_error());
 	echo "<strong>Cr&eacute;ation effectu&eacute;e !</strong>";
 	echo "<br /><br />";
 }
@@ -52,7 +52,7 @@ if(!empty($_POST))
 <form action="addevent.php" method="post">
 Titre : <input type="text" name="titre"  /><br />
 Description : <br /><textarea name="desc" style="min-height:100px; min-width:350px;"></textarea><br />
-Date (AAAA-MM-JJ hh:mm:ss) : <input type="text" name="date"  /><br />
+Date et heure : <input type="text" name="date"  /><br />
 <input type="hidden" name="idpro" value="<?php echo $id; ?>" />
 <input type="hidden" name="petat" value="<?php echo $etat; ?>" />
 <input type="hidden" name="pinsc" value="<?php echo $insc; ?>" />
